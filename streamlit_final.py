@@ -699,8 +699,8 @@ if page == "TEST":
 
 import io, zipfile, requests, pandas as pd, streamlit as st
 
-URL_TRAIN = "https://dl.dropboxusercontent.com/scl/fi/kf22pylagnd5gxuu22cma/mitbih_train.zip?rlkey=d4jyzmffeulto7rhqskc0gk3r&st=z6hrmj1o&dl=1"
-URL_TEST  = "https://dl.dropboxusercontent.com/scl/fi/g8fd2f2yfq7p3kmu8s2lq/mitbih_test.zip?rlkey=alghgxzbu2p3qw2l1y6atgg5l&st=194m0cnk&dl=1"
+URL_TRAIN = "https://drive.google.com/file/d/1ywt8H4j98_ZUGC7YheS0BtfM6Tn4B62a/"
+URL_TEST  = "https://drive.google.com/file/d/1j1t1NfPTRy0UWWkxdxxz-0VifsI5UL4S/ "
 
 @st.cache_data(show_spinner=True, ttl=24*3600)  # cache 24h
 def read_csv_from_dropbox_zip(url: str, inner_csv: str, sep=None):
@@ -846,4 +846,5 @@ if page == "Modélisation" :
         pred = clf.predict(x)[0]
         
         st.write("Classe vraie :", int(classe_origine))
+
         st.write("Classe prédite :", int(pred), "-", noms_classes[int(pred)])
